@@ -1,0 +1,20 @@
+function [offspring] = matched(parent,offspring)
+cities=length(parent);
+x=int16(fix(cities/3));
+y=2*x;
+for i = 1:x
+    if ismember(parent(i),offspring)
+        offspring(i)=check(parent,offspring,i);
+    else
+        offspring(i)= parent(i);
+    end
+end
+for i = y+1:cities
+    if ismember(parent(i),offspring)
+        offspring(i)=check(parent,offspring,i);
+    else
+        offspring(i)= parent(i);
+    end
+end
+        
+end    
