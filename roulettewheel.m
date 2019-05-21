@@ -4,9 +4,9 @@ s=0;
 for i=1:length(f)
     s=s+f(i)
 end
-f=(1/s).*f;
+f=(1/s).*f;    %probability of each fitness
 y=rand();
-if y<(1/s)
+if y<(1/s)     %return index
     solution=1
 elseif y>(1/s)&y<(7/s)
     solution=3
